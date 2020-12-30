@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Untitled Document</title>
+    <meta name="Author" content="" />
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+Hello world 
+<div id="main" contenteditable="true">
+        Hello world #
+    
+    </div>
+<button onclick=counter()>Counter</button>
+
+    <script>
+        function counter() {
+            let main = document.getElementById('main');
+            main = main.innerHTML;
+            alert(main);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="UTF-8">
+    <title>Untitled Document</title>
+	<meta name="Author" content=""/>
+    <style>
+        .main div {
+            display: inline-block
+        }
+        .code-hide {
+            display: none;
+        }
+        textarea {
+            border: none;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+
+
+    <div class="main">
+        <div class="code-area">
+            <textarea class="code-body">
+                
+<html>
+    <head>
+<style>
+        p {
+        color: red
+        }
+        </style></head>
+    <body>
+        <p>Hello</p></body>
+</html>
+            </textarea>
+            <div class="code-hide">
+            </div>
+        </div>
+        <div>
+            <button onclick="preview()">Run</button>
+        </div>
+        <div class="preview-area">
+        </div>
+    </div>
+
+    <script>
+        preview()
+        function preview() {
+            const codeBody = document.getElementsByClassName('code-body');
+            const codeHide = document.getElementsByClassName('code-hide');
+            const previewArea = document.getElementsByClassName('previewArea');
+            codeHide[0].innerHTML = codeBody[0].value
+            previewArea[0].innerHTML = codeHide.outerHTML
+        }
+    </script>
+</body>
+</html>
