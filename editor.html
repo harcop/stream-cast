@@ -6,22 +6,61 @@
     <title>Untitled Document</title>
     <meta name="Author" content="" />
     <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+        * {
+            outline: none
+        }
+        #main {
+            border: red solid 1px;
+            width: 300px;
+            height: 500px;
+            padding: 30px;
+            position: relative;
+        }
+
+        .number {
+            position: absolute;
+            left: -20px
+        }
+
+        #main p {
+            display: inline-block
+        }
+        .mainer{
+            border: green solid 1px;
+            padding: 40px;
+        }
+    </style>
 </head>
 
 <body>
-Hello world 
-<div id="main" contenteditable="true">
-        Hello world #
-    
+    Hello world
+    <div class="mainer">
+        lsadk
+        <div id="main" contenteditable="true">
+        </div>
     </div>
-<button onclick=counter()>Counter</button>
+    <button onclick=counter()>Counter</button>
 
     <script>
+        let main = document.getElementById('main');
+        let line = 1;
+
         function counter() {
-            let main = document.getElementById('main');
             main = main.innerHTML;
             alert(main);
         }
+        main.addEventListener('keyup', function(e) {
+            if (main.innerHTML === '') {
+                alert('empty')
+                main.innerHTML = `<div><span class="number" contenteditable="false">${line}</span><span class="text-code">Hello world #</span></div>`
+            }
+            if (e.keyCode === 13) {
+                line += 1;
+                main.innerHTML += `<div><span class="number" contenteditable="false">${line}</span><span class="text-code">Hello world 2</span></div>`
+            }
+        })
+
     </script>
 </body>
 
